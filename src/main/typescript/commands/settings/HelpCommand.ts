@@ -63,22 +63,22 @@ class HelpCommand extends Command {
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Link)
                 .setLabel("Docs")
-                .setURL("https://docs.sudobot.onesoftnet.eu.org")
+                .setURL("https://tbr.rf.gd/docs")
                 .setEmoji("📘"),
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Link)
                 .setLabel("Website")
-                .setURL("https://sudobot.onesoftnet.eu.org")
+                .setURL("https://tbr.rf.gd")
                 .setEmoji("🌐"),
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Link)
                 .setLabel("Support")
-                .setURL("https://discord.gg/892GWhTzgs")
+                .setURL("https://tbr.rf.gd")
                 .setEmoji("🛠️"),
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Link)
                 .setLabel("GitHub")
-                .setURL("https://github.com/onesoft-sudo/sudobot")
+                .setURL("https://tbr.rf.gd/gh")
                 .setEmoji(emoji(Application.current(), "github")?.toString() || "🐙")
         )
     ];
@@ -88,17 +88,17 @@ class HelpCommand extends Command {
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Link)
                 .setLabel("Docs")
-                .setURL("https://docs.sudobot.onesoftnet.eu.org")
+                .setURL("https://tbr.rf.gd/docs")
                 .setEmoji("📘"),
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Link)
                 .setLabel("Website")
-                .setURL("https://sudobot.onesoftnet.eu.org")
+                .setURL("https://tbr.rf.gd")
                 .setEmoji("🌐"),
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Link)
                 .setLabel("GitHub")
-                .setURL("https://github.com/onesoft-sudo/sudobot")
+                .setURL("https://tbr.rf.gd/gh")
                 .setEmoji(emoji(Application.current(), "github")?.toString() || "🐙")
         )
     ];
@@ -163,14 +163,13 @@ class HelpCommand extends Command {
             let description = `## ${commandHead}\n`;
 
             description += `### Group\n${inlineCode(rootCommand.group)}\n`;
-            description += `### Aliases\n${
-                !metadata.aliases?.length
+            description += `### Aliases\n${!metadata.aliases?.length
                     ? "*None*\n"
                     : metadata.aliases
-                          .filter(a => !a.includes(" "))
-                          .map(alias => `${inlineCode(alias.replace("::", " "))}`)
-                          .join(", ")
-            }\n`;
+                        .filter(a => !a.includes(" "))
+                        .map(alias => `${inlineCode(alias.replace("::", " "))}`)
+                        .join(", ")
+                }\n`;
             description += `### Description\n${metadata.detailedDescription ?? metadata.description}\n`;
             description += `### Usage\n${metadata.usage?.length ? metadata.usage.map(usage => `${inlineCode(commandHead + " " + usage)}`).join("\n") : inlineCode(commandHead)}\n`;
 
